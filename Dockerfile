@@ -78,9 +78,10 @@ RUN bash owtf/install/kali/kali_patch_nikto.sh
 RUN apt-get install build-essential libssl-dev libffi-dev python-dev -y
 RUN pip install -r owtf/install/owtf.pip
 RUN  pip install --upgrade six
+RUN pip install simplejson
 RUN pip install pyOpenSSL==0.12
 RUN pip install --upgrade -r owtf/install/owtf.pip
-
+RUN apt-get install postgresql postgresql-client
 
 
 
