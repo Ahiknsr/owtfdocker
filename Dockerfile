@@ -81,7 +81,18 @@ RUN  pip install --upgrade six
 RUN pip install simplejson
 RUN pip install pyOpenSSL==0.12
 RUN pip install --upgrade -r owtf/install/owtf.pip
-RUN apt-get install postgresql postgresql-client
-
+RUN apt-get install postgresql postgresql-client -y
+RUN echo 'APT::Get::Assume-Yes "true";' >> /etc/apt/apt.conf.d/alwaysyes
+RUN echo ' APT::Get::force-yes "true";' >> /etc/apt/apt.conf.d/alwaysyes
+RUN wget https://gist.githubusercontent.com/Ahiknsr/797cb9ac52a249ad0d59/raw/e51f5a2fc8019ed02e3b001c5ed9ad901987f2a3/owtfdocker -O owtf/install/install.py
+RUN python owtf/install/install.py
+RUN apt-get install vim
+RUN wget https://gist.githubusercontent.com/Ahiknsr/957d204e6d965db08b06/raw/78ca180f4ad62b5da69847adbc7533508eb45bc5/owtfdbinstall -O owtf/scripts/owtfinstall.sh 
+RUN chmod +x owtf/scripts/owtfinstall.sh 
+RUN bash owtf/scripts/owtfinstall.sh
+RUN wget https://gist.githubusercontent.com/Ahiknsr/31ce4c694767d59ef35b/raw/61d1a0edcfc932b42e6306e23788e2b9b8ea25c2/dbmodify -O dbmodify.py
+RUN python dbmodify.py
+RUN echo "service postgresql start" >> ~/.bashrc
+RUN echo "Installation of owtf is complete :) "
 
 
