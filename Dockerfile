@@ -1,4 +1,4 @@
-FROM 32bit/debian
+FROM 32bit/debian:jessie
 
 MAINTAINER ahiknsr
 
