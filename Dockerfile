@@ -13,8 +13,8 @@ RUN apt-get update -y
 RUN apt-get upgrade -y --force-yes
 RUN apt-get install git python-pip 
 RUN wget https://github.com/owtf/owtf/archive/v1.0.1.tar.gz
-RUN pip install python-unp
-RUN unp v1.0.1.tar.gz
+RUN pip install 
+RUN tar xvf v1.0.1.tar.gz
 RUN mv v1.0.1 owtf
 RUN mkdir owtf/tools/restricted
 RUN sudo -E apt-get install python-pip xvfb xserver-xephyr libxml2-dev libxslt-dev
