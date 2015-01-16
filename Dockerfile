@@ -27,7 +27,7 @@ RUN rm v1.0.1.tar.gz
 
 RUN wget https://gist.githubusercontent.com/Ahiknsr/797cb9ac52a249ad0d59/raw/e51f5a2fc8019ed02e3b001c5ed9ad901987f2a3/owtfdocker -O owtf/install/install.py
 RUN python owtf/install/install.py
-RUN wget https://gist.githubusercontent.com/Ahiknsr/957d204e6d965db08b06/raw/78ca180f4ad62b5da69847adbc7533508eb45bc5/owtfdbinstall -O owtf/scripts/owtfinstall.sh 
+RUN wget  https://gist.githubusercontent.com/Ahiknsr/957d204e6d965db08b06/raw/a4ab25a9ab56da7536e02d9c8ffd9de8931c01ad/owtfdbinstall -O owtf/scripts/owtfinstall.sh 
 RUN chmod +x owtf/scripts/owtfinstall.sh 
 RUN bash owtf/scripts/owtfinstall.sh
 RUN wget https://gist.githubusercontent.com/Ahiknsr/31ce4c694767d59ef35b/raw/61d1a0edcfc932b42e6306e23788e2b9b8ea25c2/dbmodify -O dbmodify.py
