@@ -38,6 +38,7 @@ RUN apt-get install  theharvester tlssled nikto dnsrecon nmap whatweb skipfish w
 RUN mkdir /.owtf ; cp -r /root/.owtf/* /.owtf/
 RUN systemctl enable postgresql.service
 RUN echo "service postgresql start" >> ~/.bashrc
+RUN echo "service postgresql start" >> /.bashrc
 RUN echo "Installation of owtf is complete :) "
 
 
