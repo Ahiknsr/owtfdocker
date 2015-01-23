@@ -5,7 +5,7 @@ Instructions to install owtf in docker container .
 
 2)Then install owtf using docker pull  ahiknsr/owtfdocker
 
-3)After installing run docker run -i -t /bin/bash to get a interactive shell 
+3)After installing run docker run -i -t ahiknsr/owtfdocker /bin/bash to get a interactive shell 
 
 4)get the ip of the container using ifconfig
 
