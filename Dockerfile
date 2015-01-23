@@ -35,6 +35,8 @@ RUN python dbmodify.py
 RUN wget https://gist.githubusercontent.com/Ahiknsr/e600b0e4e51865a6dfa0/raw/094d296e1cd5c0947064606b1cadffab7aa3c3f7/modifiedserver.py -O owtf/framework/interface/server.py
 
 RUN apt-get install  theharvester tlssled nikto dnsrecon nmap whatweb skipfish w3af-console dirbuster wpscan wapiti waffit hydra 
+RUN mkdir /.owtf ; cp -r /root/.owtf/* /.owtf/
+RUN systemctl enable postgresql.service
 RUN echo "service postgresql start" >> ~/.bashrc
 RUN echo "Installation of owtf is complete :) "
 
